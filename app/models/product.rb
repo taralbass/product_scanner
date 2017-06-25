@@ -4,4 +4,8 @@ class Product < ApplicationRecord
 
   validates :name, presence: true
 
+  def upc_codes
+    upcs.map(&:code)
+  end
+
 end
