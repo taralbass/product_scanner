@@ -1,0 +1,22 @@
+// Note -- I'm not this good with CSS. This was lifted from a prior project. :)
+
+.full-page-spinner {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  z-index: 215;
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+
+  .spinner {
+    width: 130px;
+    height: 130px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+}

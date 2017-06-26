@@ -1,0 +1,48 @@
+// Note -- I'm not this good with CSS. This was lifted from a prior project. :)
+
+.error-box {
+  background-color: rgba(0, 0, 0, 0.4);
+  height: 100%;
+  z-index: 215;
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+
+  .popup {
+    background-color: white;
+    border: solid 3px red;
+    font-size: 24px;
+    text-align: center;
+    width: 500px;
+    height: 200px;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    .spacer {
+      height: 70px;
+    }
+
+    .close-icon {
+      display: inline-block;
+      float: right;
+      width: 15px;
+      height: 15px;
+      padding-top: 5px;
+      padding-right: 15px;
+    }
+
+    button {
+      width: 100px;
+      height: 35px;
+      display: inline-block;
+      float: right;
+      margin-right: 60px;
+      margin-top: 15px;
+    }
+  }
+}

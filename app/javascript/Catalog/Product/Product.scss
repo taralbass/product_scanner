@@ -1,0 +1,13 @@
+.product {
+  .name {
+    display: inline-block;
+    width: 350px;
+  }
+
+  .upc-code {
+    display: inline-block;
+    width: 150px;
+    font-family: Consolas, "Liberation Mono", Courier, monospace;
+    font-weight: bold;
+  }
+}

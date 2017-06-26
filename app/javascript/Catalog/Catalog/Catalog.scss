@@ -1,0 +1,27 @@
+.catalog {
+  font-size: 18px;
+  font-family: Georgia, Cambria, "Times New Roman", Times, serif;
+  color: #333333;
+
+  h1, h2, h3 {
+    color: #111111;
+    font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  input, button {
+    font-size: 18px;
+  }
+
+  button {
+    background-color: #0095ff;
+    color: white;
+  }
+}

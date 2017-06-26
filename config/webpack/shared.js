@@ -32,7 +32,29 @@ module.exports = {
   },
 
   module: {
-    rules: sync(join(loadersDir, '*.js')).map(loader => require(loader))
+    rules: sync(join(loadersDir, '*.js')).map(loader => require(loader)).concat(
+      {
+        test: require.resolve('react'),
+        use: [{
+            loader: 'expose-loader',
+            options: 'React'
+        }]
+      },
+      {
+        test: require.resolve('react-dom'),
+        use: [{
+            loader: 'expose-loader',
+            options: 'ReactDOM'
+        }]
+      },
+      {
+        test: require.resolve('prop-types'),
+        use: [{
+            loader: 'expose-loader',
+            options: 'PropTypes'
+        }]
+      }
+    )
   },
 
   plugins: [
