@@ -6,7 +6,8 @@ const UPC_ACTIONS = {
   },
 }
 
-const upcsEndpoint = 'http://192.168.1.5:3000/upcs'
+// const upcsEndpoint = 'http://192.168.1.5:3000/upcs'
+const upcsEndpoint = 'http://hidden-waters-61899.herokuapp.com/upcs'
 
 function loadUpcs() {
   return function(dispatch) {
