@@ -2,6 +2,16 @@ require 'rails_helper'
 
 describe Upc do
 
+  context "#upc" do
+
+    let(:upc) { create(:upc) }
+
+    subject { upc.upc }
+
+    it { is_expected.to eq(upc.code) }
+
+  end
+
   context "#validate_code" do
 
     let(:upc) { build(:upc, code: code) }
