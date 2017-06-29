@@ -7,7 +7,6 @@ class UpcsController < ApplicationController
     # manually serialize as the specs for this action do not align with
     # the app-wide approach
     serializations = Upc.includes(:product).all.map do |upc|
-      Rails.logger.info upc.inspect
       UpcSerializer.new(upc).as_json
     end
 

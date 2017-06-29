@@ -1,53 +1,48 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
+import 'react-native-globals';
 
-import React, { Component } from 'react';
-import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import ProductCheckerContainer from './app/components/ProductCheckerContainer'
+import { loadUpcs } from './app/actions/UpcActionCreators'
+import store from './app/store/Store'
 
-export default class ProductScanner extends Component {
+
+store.dispatch(loadUpcs())
+
+// reload UPCs every minute to catch any new ones
+setInterval(() => {
+  store.dispatch(loadUpcs())
+}, 60 * 1000)
+
+
+export default class ProductScanner extends React.Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
+      <View style={[containerStyles.container, commonStyles.view]}>
+        <ProductCheckerContainer store={store} style={commonStyles}/>
       </View>
-    );
+    )
   }
 }
 
-const styles = StyleSheet.create({
+const commonStyles = StyleSheet.create({
+  view: {
+    backgroundColor: '#fff',
+  },
+  text: {
+    color: '#000',
+    fontSize: 20,
+  },
+  errorText: {
+    color: 'red',
+  },
+})
+
+const containerStyles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    justifyContent: 'center',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-});
+})
 
-AppRegistry.registerComponent('ProductScanner', () => ProductScanner);
+AppRegistry.registerComponent('ProductScanner', () => ProductScanner)
+

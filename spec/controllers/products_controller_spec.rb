@@ -65,10 +65,15 @@ describe ProductsController do
         }
       end
 
-      it "should return http failure" do
+      it "should return http ok" do
         subject
-        expect(response).to have_http_status(:internal_server_error)
+        expect(response).to have_http_status(:ok)
       end
+
+      it "should provide error in json" do
+        expect(parsed_json["error"]["message"]).to match(/Internal Server Error/)
+      end
+
 
       it "should not create a product" do
         expect { subject }.to_not change { Product.count }.from(0)
