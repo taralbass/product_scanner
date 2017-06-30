@@ -14,7 +14,7 @@ const PRODUCT_ACTIONS = {
   CLEAR_ERRORS: 'ACTIONS.CLEAR_ERRORS',
 }
 
-const productsEndpoint = 'http://localhost:3000/products'
+const productsEndpoint = '/products'
 
 function loadProducts() {
   return function(dispatch) {
