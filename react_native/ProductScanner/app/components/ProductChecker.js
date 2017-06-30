@@ -32,7 +32,8 @@ class ProductChecker extends React.Component {
         onDismiss={this.dismissUpc}
       >
         <Text style={this.props.style.text}>
-          Found: {this.state.upc}
+          {this.props.upcHash[this.state.upc]}{"\n"}
+          (UPC {this.state.upc})
         </Text>
       </Popup>
     )
@@ -45,7 +46,7 @@ class ProductChecker extends React.Component {
         onDismiss={this.dismissUpc}
       >
         <Text style={[this.props.style.text, this.props.style.errorText]}>
-          Not Found: {this.state.upc}
+          UPC {this.state.upc} is not in the product database.
         </Text>
       </Popup>
     )
