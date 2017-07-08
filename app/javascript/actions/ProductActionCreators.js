@@ -76,7 +76,7 @@ function createProduct(data) {
       .catch((error) => {
         console.error("JSON Error: ", error.message)
         console.error(error.stack)
-        dispatch(loadProductsFailed(error.message))
+        dispatch(createProductFailed(error.message))
       })
     })
     .catch((error) => {
