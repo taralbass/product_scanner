@@ -41,7 +41,6 @@ function loadProducts() {
     .catch((error) => {
       console.error("Error: ", error.message)
       console.error(error.stack)
-      console.log(loadProductsFailed(error.message))
       dispatch(loadProductsFailed(error.message))
     })
   }
@@ -83,7 +82,6 @@ function createProduct(data) {
     .catch((error) => {
       console.error("Error: ", error.message)
       console.error(error.stack)
-      console.log(loadProductsFailed(error.message))
       dispatch(createProductFailed(error.message))
     })
   }
