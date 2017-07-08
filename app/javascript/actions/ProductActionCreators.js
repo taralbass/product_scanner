@@ -27,6 +27,9 @@ function loadProducts() {
       }
       response.json()
       .then((json) => {
+        if (json.error) {
+          throw new Error("Server error: " + json.error.message)
+        }
         dispatch(loadProductsSucceeded(json))
       })
       .catch((error) => {
@@ -66,6 +69,9 @@ function createProduct(data) {
       }
       response.json()
       .then((json) => {
+        if (json.error) {
+          throw new Error("Server error: " + json.error.message)
+        }
         dispatch(createProductSucceeded(json))
       })
       .catch((error) => {
